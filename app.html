@@ -8,8 +8,27 @@
 		<script src="jogo.js"></script>
 	</head>
 	<body onresize="ajustaTamanhoPalcoJogo()">
+
+		<div class="painel">
+			<div class="vida">
+			<img id="v1" src="imagens/coracao_cheio.png">
+			<img id="v2" src="imagens/coracao_cheio.png">
+			<img id="v3" src="imagens/coracao_cheio.png">
+			
+			</div>
+
+			<div class="cronometro">Tempor restabte: ?</div>
+		</div>
+
+		
+
+
+
+
 		<script>
+		setInterval(function(){
 			posicaoRandomica()
+		}, 1000)
 		</script>
 	</body>
 </html>

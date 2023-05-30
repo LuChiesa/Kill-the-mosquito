@@ -1,6 +1,7 @@
 
 var altura = 0
 var largura = 0
+var vidas = 1
 
 function ajustaTamanhoPalcoJogo() {
 	altura = window.innerHeight
@@ -12,6 +13,16 @@ function ajustaTamanhoPalcoJogo() {
 ajustaTamanhoPalcoJogo()
 
 function posicaoRandomica() {
+	if(document.getElementById('mosca')){
+		document.getElementById('mosca').remove()
+
+		if(vidas > 3){
+			window.location.href = 'fim_de_jogo.html'
+		}
+		document.getElementById('v' + vidas).src="imagens/coracao_vazio.png"
+
+		vidas++
+	}
 
 var posicaoX = Math.floor(Math.random() * largura) - 90 
 var posicaoY = Math.floor(Math.random() * altura) - 90 // you need to decrement this to your mosquito doesnt jump out of the screen
@@ -22,12 +33,19 @@ console.log(posicaoX, posicaoY)
 
 var mosca = document.createElement('img')
 mosca.src = 'imagens/mosca.png'
-mosca.className = tamanhoAleatorio()
+mosca.className = tamanhoAleatorio() + ' ' + ladoAleatorio()
 mosca.style.left = posicaoX + 'px'
 mosca.style.top = posicaoY + 'px'
 mosca.style.position = 'absolute'
+mosca.id = 'mosca'
+mosca.onclick = function() {
+	this.remove()
+}
 
 document.body.appendChild(mosca)
+
+
+
 
 
 }
@@ -43,5 +61,18 @@ function tamanhoAleatorio(){
 
 		case 2:
 		return 'mosca3'
+	}
+}
+function ladoAleatorio() {
+	var classe = Math.floor(Math.random() * 2)
+
+	switch(classe){
+		case 0:
+			return 'ladoA'
+
+		case 1:
+			return 'ladoB'
+
+	
 	}
 }
