@@ -17,18 +17,15 @@
 			
 			</div>
 
-			<div class="cronometro">Tempor restabte: ?</div>
+			<div class="cronometro">Tempor restante: <span id="cronometro"></div>
 		</div>
 
-		
-
-
-
-
 		<script>
-		setInterval(function(){
+		document.getElementById('cronometro').innerHTML = tempo
+
+		var criaMosca = setInterval(function() {
 			posicaoRandomica()
-		}, 1000)
+		}, 2000)
 		</script>
 	</body>
 </html>
