@@ -9,6 +9,21 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="estilo.css"/>
 
+    <script>
+        function iniciarJogo(){
+            var dificuldade = document.getElementById('dificuldade').value
+
+            if(dificuldade === '') {
+                alert('Selecione uma diífculdade para iniciar o jogo')
+                return false
+            }
+
+            window.location.href = "app.html?" + dificuldade
+
+           
+        }
+    </script>
+
 </head>
 <body>
     <div class="container">
@@ -26,8 +41,8 @@
                 <div class="mb-2">
                <select name="dificuldade" id="dificuldade" class="form-control">
                     <option value="">-- Selecione o nível --</option>
-                    <option value="normal">NORMAL</option>
-                    <option value="dificil">HARD</option>
+                    <option value="normal">Normal</option>
+                    <option value="dificil">Difícil</option>
                     <option value="sbp">SBP</option>
                 </select>
 

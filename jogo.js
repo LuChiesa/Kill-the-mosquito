@@ -2,7 +2,20 @@
 var altura = 0
 var largura = 0
 var vidas = 1
-var tempo = 5
+var tempo = 50
+
+var criaMoscaTempo = 1500
+
+var dificuldade = window.location.search
+dificuldade = dificuldade.replace('?', '')
+
+if(dificuldade === 'normal') {
+	criaMoscaTempo = 1500
+}else if(dificuldade === 'dificil') {
+	criaMoscaTempo = 1000
+}else if(dificuldade === 'sbp') {
+	criaMoscaTempo = 750
+}
 
 function ajustaTamanhoPalcoJogo() {
 	altura = window.innerHeight
